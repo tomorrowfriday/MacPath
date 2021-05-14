@@ -395,36 +395,36 @@ int main(int argc, const char **file)
     char *data = mx_file_to_str(file[1]);
     int sizeoffile = pf_sizeoffile(file[1]);
     int numbersofstrings = pf_numbersofstrings(file[1]);
-    char *stringsoffile[numbersofstrings];
-    int sortoffile = 0;
-    int strlen = 0;
-    for(int x = 0; x < numbersofstrings; x++)
-    {
-    stringsoffile[x] = NULL;
-    }
-    int countofstring = 0;
-    for(;sortoffile < sizeoffile; sortoffile++)
-    {
-        if (data[sortoffile] != '\n')
-        {
-        strlen ++;
-        }
-        if (data[sortoffile] == '\n')
-        {
-            stringsoffile[countofstring] = mx_strnew(strlen);
-                for(int x = 0; x <= strlen; x++)
-                {
-                    stringsoffile[countofstring][x] = data[sortoffile - strlen + x];
-                }
-        countofstring ++;  
-        strlen = 0;
-        }    
-    }
+    // char *stringsoffile[numbersofstrings];
+    // int sortoffile = 0;
+    // int strlen = 0;
+    // for(int x = 0; x < numbersofstrings; x++)
+    // {
+    // stringsoffile[x] = NULL;
+    // }
+    // int countofstring = 0;
+    // for(;sortoffile < sizeoffile; sortoffile++)
+    // {
+    //     if (data[sortoffile] != '\n')
+    //     {
+    //     strlen ++;
+    //     }
+    //     if (data[sortoffile] == '\n')
+    //     {
+    //         stringsoffile[countofstring] = mx_strnew(strlen);
+    //             for(int x = 0; x <= strlen; x++)
+    //             {
+    //                 stringsoffile[countofstring][x] = data[sortoffile - strlen + x];
+    //             }
+    //     countofstring ++;  
+    //     strlen = 0;
+    //     }    
+    // }
     for(int y = 0; y < numbersofstrings; y++)
     {
-    // printf("%s", pf_stringtoarr(data, sizeoffile)[y]);
-    printf("%s", stringsoffile[y]); 
-    free(stringsoffile[y]);
+    printf("%s", pf_stringtoarr(data, sizeoffile)[y]);
+    // printf("%s", stringsoffile[y]); 
+    // free(stringsoffile[y]);
     }
     //--------------------------------Data sort-----------------------------
 

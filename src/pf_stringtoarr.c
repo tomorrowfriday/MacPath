@@ -1,6 +1,6 @@
 #include "pathfinder.h"
 
-char **pf_stringtoarr(char *data, int sizeoffile, int numbersofstrings)
+char **pf_stringtoarr(char *data, int sizeoffile)
 {
     char **stringsoffile = NULL;    
     int sortoffile = 0;

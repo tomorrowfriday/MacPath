@@ -1,5 +1,5 @@
 #include "inc/pathfinder.h"
-/*//------------Struct-----------
+//------------Struct-----------
     struct AdjListNode
     {
         int dest;
@@ -164,9 +164,9 @@ void minHeapify(struct MinHeap* minHeap,
     if (smallest != idx)
     {
         // The nodes to be swapped in min heap
-        MinHeapNode *smallestNode =
+        struct MinHeapNode *smallestNode =
              minHeap->array[smallest];
-        MinHeapNode *idxNode =
+        struct MinHeapNode *idxNode =
                  minHeap->array[idx];
  
         // Swap positions
@@ -376,59 +376,30 @@ int main()
      system("leaks -q a.out");
     return 0;
 }
-*/
+
 
 
     
-int main(int argc, const char **file) 
-{
-    if(argc > 2)
-    {
-        printf("There is more than 1 file\n");
-        exit(1);
-    }
-    if(argc < 2)
-    {
-        printf("There is no file\n");
-        exit(1);
-    }
-    char *data = mx_file_to_str(file[1]);
-    int sizeoffile = pf_sizeoffile(file[1]);
-    int numbersofstrings = pf_numbersofstrings(file[1]);
-    // char *stringsoffile[numbersofstrings];
-    // int sortoffile = 0;
-    // int strlen = 0;
-    // for(int x = 0; x < numbersofstrings; x++)
-    // {
-    // stringsoffile[x] = NULL;
-    // }
-    // int countofstring = 0;
-    // for(;sortoffile < sizeoffile; sortoffile++)
-    // {
-    //     if (data[sortoffile] != '\n')
-    //     {
-    //     strlen ++;
-    //     }
-    //     if (data[sortoffile] == '\n')
-    //     {
-    //         stringsoffile[countofstring] = mx_strnew(strlen);
-    //             for(int x = 0; x <= strlen; x++)
-    //             {
-    //                 stringsoffile[countofstring][x] = data[sortoffile - strlen + x];
-    //             }
-    //     countofstring ++;  
-    //     strlen = 0;
-    //     }    
-    // }
-    for(int y = 0; y < numbersofstrings; y++)
-    {
-    printf("%s", pf_stringtoarr(data, sizeoffile)[y]);
-    // printf("%s", stringsoffile[y]); 
-    // free(stringsoffile[y]);
-    }
-    //--------------------------------Data sort-----------------------------
+// int main(int argc, const char **file) 
+// {
+//     if(argc > 2)
+//     {
+//         printf("There is more than 1 file\n");
+//         exit(1);
+//     }
+//     if(argc < 2)
+//     {
+//         printf("There is no file\n");
+//         exit(1);
+//     }
+//     char *data = mx_file_to_str(file[1]);
+//     int sizeoffile = pf_sizeoffile(file[1]);
+//     int numbersofstrings = pf_numbersofstrings(file[1]);
+//     for(int y = 0; y < numbersofstrings; y++)
+//     {
+//     printf("%s", pf_stringtoarr(data, sizeoffile)[y]);
+//     }
 
-
-    system("leaks -q a.out");
-    return 0;
-}
+//     system("leaks -q a.out");
+//     return 0;
+// }
